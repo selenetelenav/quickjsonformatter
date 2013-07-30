@@ -91,9 +91,10 @@ function ProcessObject(obj, indent, addComma, isArray, isPropertyContent){
   }else if(type == 'undefined'){
     html += FormatLiteral("undefined", "", comma, indent, isArray, "Null");
   }else if(type == 'string'){
-    if (window.RecursiveFormat != 0) {
+    objStr = obj.toString();
+    if (window.RecursiveFormat != 0 && (objStr.indexOf('{') != -1 || objStr.indexOf('[') != -1)) {
       try {
-        rObj = eval("["+obj.toString()+"]");
+        rObj = eval("["+objStr+"]");
         html+= '"' + ProcessObject(rObj[0], indent, addComma, false, isPropertyContent) + '"';
       }catch(e){
         html += FormatLiteral(obj.toString().split("\\").join("\\\\").split('"').join('\\"'), "\"", comma, indent, isArray, "String");
