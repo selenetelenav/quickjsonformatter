@@ -93,8 +93,8 @@ function ProcessObject(obj, indent, addComma, isArray, isPropertyContent){
   }else if(type == 'string'){
     if (window.RecursiveFormat != 0) {
       try {
-        rObj = eval("[" + obj.toString() + "]");
-        html+= ProcessObject(rObj, indent, addComma, false, isPropertyContent);
+        rObj = eval("["+obj.toString()+"]");
+        html+= '"' + ProcessObject(rObj[0], indent, addComma, false, isPropertyContent) + '"';
       }catch(e){
         html += FormatLiteral(obj.toString().split("\\").join("\\\\").split('"').join('\\"'), "\"", comma, indent, isArray, "String");
       }
