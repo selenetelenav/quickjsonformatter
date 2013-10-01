@@ -5,3 +5,5 @@ See the gh-pages branch for the HTML file.
 Adapted from Vladimir Bodurov:
 http://blog.bodurov.com/Formatter-and-colorer-of-raw-JSON-code
 
+JSONLint validator from Zach Carter:
+https://github.com/zaach/jsonlint
