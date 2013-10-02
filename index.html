@@ -7,7 +7,7 @@
 <script type="text/javascript" src="jsonlint.js"></script>
 <script> 
 // we need tabs as spaces and not CSS magin-left 
-// in order to ratain format when coping and pasing the code
+// in order to retain format when copying and pasting the code
 window.SINGLE_TAB = "  ";
 window.ImgCollapsed = "images/Collapsed.gif";
 window.ImgExpanded = "images/Expanded.gif";
@@ -42,11 +42,11 @@ function Process(){
 }
 function Clear(element){
   element.innerHTML = "";
-  element.style = "display: none";
+  element.style.display = "none";
 }
 function Show(element, markup){
   element.innerHTML = markup;
-  element.style = "";
+  element.style.display = "block";
 }
 window._dateObj = new Date();
 window._regexpObj = new RegExp();
